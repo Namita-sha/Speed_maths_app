@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathBeast — Mental Math Trainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>MathBeast</h1>
+      <p class="tagline">Mental math trainer — no pen, no calculator</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="tricks">Tricks</button>
+      <button class="tab-btn" data-tab="quiz">Speed Quiz</button>
+      <button class="tab-btn" data-tab="scores">Scores</button>
+    </nav>
+
+    <!-- TRICKS TAB -->
+    <section id="tab-tricks" class="tab-panel active">
+      <div class="tricks-grid" id="tricks-grid"></div>
+    </section>
+
+    <!-- QUIZ TAB -->
+    <section id="tab-quiz" class="tab-panel">
+
+      <div class="quiz-config">
+        <div class="config-group">
+          <span class="config-label">Difficulty</span>
+          <div class="btn-group" id="diff-group">
+            <button class="opt-btn active" data-value="easy">Easy</button>
+            <button class="opt-btn" data-value="medium">Medium</button>
+            <button class="opt-btn" data-value="hard">Hard</button>
+          </div>
+        </div>
+        <div class="config-group">
+          <span class="config-label">Type</span>
+          <div class="btn-group" id="type-group">
+            <button class="opt-btn active" data-value="mixed">Mixed</button>
+            <button class="opt-btn" data-value="multiply">Multiply</button>
+            <button class="opt-btn" data-value="squares">Squares</button>
+            <button class="opt-btn" data-value="percent">Percent</button>
+            <button class="opt-btn" data-value="add">Addition</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-stats">
+        <span>Score: <strong id="stat-score">0</strong></span>
+        <span>Streak: <strong id="stat-streak">0</strong> 🔥</span>
+        <span>Best: <strong id="stat-best">0</strong></span>
+      </div>
+
+      <div class="quiz-box" id="quiz-box">
+        <div class="start-view">
+          <p>20 questions &nbsp;·&nbsp; timed &nbsp;·&nbsp; no calculator</p>
+          <button class="primary-btn" id="start-btn">Start Quiz</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SCORES TAB -->
+    <section id="tab-scores" class="tab-panel">
+      <div id="scores-list">
+        <p class="empty-msg">No scores yet — play a round first.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- TRICK MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">&#x2715;</button>
+      <span class="modal-tag" id="modal-tag"></span>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
